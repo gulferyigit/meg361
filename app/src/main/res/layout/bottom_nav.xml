@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:paddingTop="6dp"
+    android:elevation="6dp">
+
+    <LinearLayout
+        android:id="@+id/btnHome"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_home" android:tint="#C2C2C2" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ana Sayfa" android:textSize="12sp" android:textColor="#C2C2C2" />
+    </LinearLayout>
+
+    <!-- Takvim butonu çıkarıldı; kalan düğmeler 3 eşit parçaya yayıldı -->
+
+    <LinearLayout
+        android:id="@+id/btnNew"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+    <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_add" android:tint="#C2C2C2" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yeni Günlük" android:textSize="12sp" android:textColor="#C2C2C2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnProfile"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_profile" android:tint="#C8B2E8" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Profil" android:textSize="12sp" android:textColor="#C8B2E8" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_welcome_gradient"
+    tools:context="gulfer.emine.diary.ui.WelcomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="40dp"
+        android:paddingBottom="36dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvAppTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_title"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvSlogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_slogan"
+                android:textColor="#F8F8F8"
+                android:textSize="15sp"
+                android:layout_marginTop="8dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+            <Button
+                android:id="@+id/btnLoginWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#D3B5E5"
+                android:textColor="#FFFFFF"
+                android:text="@string/welcome_login"
+                android:stateListAnimator="@null"
+                android:background="@drawable/btn_rounded_filled" />
+
+            <Button
+                android:id="@+id/btnRegisterWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/welcome_register"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/btn_rounded_outlined"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

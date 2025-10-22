@@ -1,0 +1,216 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#0E0E1A">
+
+    <LinearLayout
+        android:id="@+id/containerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Toolbar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <ImageButton
+                android:id="@+id/btnClose"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_back_black_24"
+                android:tint="#FFFFFF"
+                android:background="@android:color/transparent"
+                android:contentDescription="Geri" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yeni Günlük"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:fontFamily="sans-serif-medium" />
+
+            <ImageButton
+                android:id="@+id/btnCalendar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_my_calendar"
+                android:tint="#FFFFFF"
+                android:background="@android:color/transparent"
+                android:contentDescription="Takvim" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pazartesi, 27 Mayıs"
+            android:textColor="#9CA3AF"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bugün nasılsın?"
+            android:textColor="#9CA3AF"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="8dp"
+            android:textSize="14sp" />
+
+        <!-- Emoji row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="start">
+
+            <Button
+                android:id="@+id/emoji1"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip"
+                android:text="😄"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/emoji2"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip"
+                android:text="🙂"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/emoji3"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip"
+                android:text="😐"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/emoji4"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip"
+                android:text="😟"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/emoji5"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_chip"
+                android:text="😭"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Note input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="#1A1A2E"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            android:layout_marginTop="12dp"
+            android:padding="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="top"
+                android:hint="Bugün neler oldu?"
+                android:inputType="textMultiLine"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#9CA3AF"
+                android:padding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Photo preview (optional) -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="12dp">
+
+            <ImageView
+                android:id="@+id/previewImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:background="#11121A" />
+
+            <ImageButton
+                android:id="@+id/btnRemovePhoto"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end|top"
+                android:layout_margin="8dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:tint="#FFFFFF"
+                android:background="@android:color/transparent" />
+
+        </FrameLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="18dp" />
+
+        <!-- Buttons: Delete and Save -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Sil"
+                android:textColor="#9CA3AF"
+                android:backgroundTint="#1F2937"
+                app:cornerRadius="24dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Kaydet"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#2563EB"
+                app:cornerRadius="24dp" />
+
+        </LinearLayout>
+
+        <!-- Spacer to push bottom nav to bottom -->
+        <View android:layout_width="match_parent" android:layout_height="20dp" />
+
+        <!-- Bottom navigation removed from fragment; shared bottom_nav is included in activity layout -->
+    </LinearLayout>
+</ScrollView>

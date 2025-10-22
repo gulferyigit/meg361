@@ -43,4 +43,49 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="login_fragment_label">Login</string>
+    <string name="register_fragment_label">Register</string>
+    <string name="diary_list_label">Diary List</string>
+    <string name="profile_label">Profile</string>
+    <string name="nav_diary">Günlükler</string>
+    <string name="nav_add">Ekle</string>
+    <string name="nav_profile">Profil</string>
+    <string name="search_hint">Günlüklerde ara...</string>
+    <string name="card_title">Günlükler</string>
+    <string name="add_button">＋</string>
+    <!-- Login / Register -->
+    <string name="welcome_back">Tekrar Hoşgeldiniz</string>
+    <string name="hint_email">E-posta adresinizi girin</string>
+    <string name="hint_password">Şifrenizi girin</string>
+    <string name="login_button">Giriş Yap</string>
+    <string name="register_link">Hesabınız yok mu? Kayıt ol.</string>
+    <string name="register_title">Kayıt Ol</string>
+    <string name="hint_name">Ad Soyad</string>
+    <string name="register_button">Kayıt Ol</string>
+
+    <!-- Profile -->
+    <string name="profile_screen_title">Profil Ekranı</string>
+    <string name="profile_title">Profil</string>
+    <string name="profile_handle">@emreyilmaz</string>
+    <string name="profile_count">234 günlük</string>
+    <string name="save_button">Kaydet</string>
+    <string name="settings_header">Ayarlar</string>
+    <string name="notifications_label">Bildirimler</string>
+    <string name="dark_theme_label">Koyu Tema</string>
+    <string name="dark_mode_off">Koyu Mod: Kapalı</string>
+
+    <!-- Welcome -->
+    <string name="app_title">Dailyfy</string>
+    <string name="welcome_slogan">Kendini ifade et, gününü yakala.</string>
+    <string name="welcome_login">Giriş Yap</string>
+    <string name="welcome_register">Hesap Oluştur</string>
+    <string name="new_journal_title">Yeni Günlük</string>
+    <string name="entry_placeholder">Bugün neler hissettin?</string>
+    <string name="tags_placeholder">#mutluluk #enerji #yorgunluk</string>
+    <string name="save">Kaydet</string>
+    <string name="nav_home">Anasayfa</string>
+    <string name="nav_calendar">Takvim</string>
+    <string name="nav_new">Yeni</string>
+    <string name="nav_mood">Ruh Hali</string>
+    <string name="nav_settings">Ayarlar</string>
 </resources>

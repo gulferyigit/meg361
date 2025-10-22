@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_green">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <!-- App title resembling the provided image -->
+                <TextView
+                    android:id="@+id/tvAppTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dailyfy"
+                    android:textSize="48sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="cursive"
+                    android:letterSpacing="0.02"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="8dp"
+                    android:shadowColor="#66000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="2" />
+
+                <!-- Card container -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:background="#FFFFFFFF"
+                    android:elevation="6dp"
+                    android:padding="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:minWidth="280dp"
+                    android:clipToPadding="false"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_margin="8dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kendini ifade et, gününü yakala."
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- E-posta -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailInput"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="#F9F9F9"
+                        app:boxStrokeColor="#E0E0E0"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="@string/hint_email"
+                            android:inputType="textEmailAddress"
+                            android:textColor="#4A4A4A"
+                            android:textSize="14sp"
+                            android:padding="12dp"
+                            android:fontFamily="sans-serif" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Şifre -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/passwordInput"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:endIconMode="password_toggle"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="#F9F9F9"
+                        app:boxStrokeColor="#E0E0E0"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="@string/hint_password"
+                            android:inputType="textPassword"
+                            android:importantForAutofill="no"
+                            android:autofillHints=""
+                            android:textColor="#4A4A4A"
+                            android:textSize="14sp"
+                            android:padding="12dp"
+                            android:fontFamily="sans-serif" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/loginButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="@string/login_button"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#C9A7E0"
+                        app:cornerRadius="20dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/registerLink"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="@string/register_link"
+                        android:textColor="#888888"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

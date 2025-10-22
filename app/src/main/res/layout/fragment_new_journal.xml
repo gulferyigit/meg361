@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pink_white_gradient"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="&lt;"
+                android:gravity="center"
+                android:layout_alignParentStart="true"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvNewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/new_journal_title"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvNewTitle"
+                android:layout_centerHorizontal="true"
+                android:text="19 Ekim 2025"
+                android:textSize="12sp"
+                android:layout_marginTop="28dp" />
+        </RelativeLayout>
+
+        <!-- Large input area -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <EditText
+                android:id="@+id/etEntry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="@string/entry_placeholder"
+                android:padding="16dp"
+                android:textColor="#111827"
+                android:textSize="16sp"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:minLines="6" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Mood selector -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:weightSum="5">
+
+            <TextView android:id="@+id/mood1" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:gravity="center" android:text="😌" android:background="#FFF7C2" android:padding="12dp" android:layout_margin="6dp" />
+            <TextView android:id="@+id/mood2" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:gravity="center" android:text="😘" android:background="#FFE1F0" android:padding="12dp" android:layout_margin="6dp" />
+            <TextView android:id="@+id/mood3" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:gravity="center" android:text="😍" android:background="#E6FFE8" android:padding="12dp" android:layout_margin="6dp" />
+            <TextView android:id="@+id/mood4" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:gravity="center" android:text="😐" android:background="#FFF7D6" android:padding="12dp" android:layout_margin="6dp" />
+            <TextView android:id="@+id/mood5" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:gravity="center" android:text="😢" android:background="#E9E0FF" android:padding="12dp" android:layout_margin="6dp" />
+
+        </LinearLayout>
+
+        <!-- Tags field -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+
+            <EditText
+                android:id="@+id/etTags"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="@string/tags_placeholder"
+                android:padding="12dp"
+                android:textSize="14sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Save button -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/save"
+            android:backgroundTint="#C9A7E0"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp" />
+
+        <View android:layout_height="0dp" android:layout_weight="1" android:layout_width="match_parent" />
+
+        <!-- Compact footer matching activity bottom_nav -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:id="@+id/btnHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_home" android:tint="#C2C2C2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ana Sayfa" android:textSize="12sp" android:textColor="#C2C2C2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnNew"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_add" android:tint="#C2C2C2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yeni Günlük" android:textSize="12sp" android:textColor="#C2C2C2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnProfile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_profile" android:tint="#C8B2E8" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Profil" android:textSize="12sp" android:textColor="#C8B2E8" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
