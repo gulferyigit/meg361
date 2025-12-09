@@ -22,10 +22,6 @@ public class JournalRepository {
         return dao.getAll();
     }
 
-    public LiveData<List<JournalEntity>> getAllByOwner(String owner) {
-        return dao.getAllByOwner(owner == null ? "" : owner);
-    }
-
     public void insert(JournalEntity e, InsertCallback cb) {
         io.execute(() -> {
             long id = dao.insert(e);

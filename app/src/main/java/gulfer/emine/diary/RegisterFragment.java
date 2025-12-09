@@ -45,30 +45,22 @@ public class RegisterFragment extends Fragment {
 
             if (!ok) return;
 
-                try {
-                    // Save name/email locally so ProfileFragment can show them
-                    try {
-                        android.content.SharedPreferences prefs = requireContext().getSharedPreferences("app_prefs", android.content.Context.MODE_PRIVATE);
-                        prefs.edit().putString("pref_name", name).putString("pref_email", email).apply();
-                    } catch (Exception ignored) {}
+            try {
+                // No SharedPreferences writes for profile (single-device app)
 
-                    // insert user into Room users table
-                    UserRepository ur = new UserRepository(requireContext());
-                    UserEntity ue = new UserEntity(name, email, password);
-                    ur.insert(ue, id -> requireActivity().runOnUiThread(() -> {
-                        NavHostFragment.findNavController(RegisterFragment.this)
-                                .navigate(R.id.action_register_to_login);
-                    }));
-                } catch (Exception ex) {
-                    // ignore navigation failures
-                }
+                // Do NOT insert into Room users table (no accounts). Navigate to diary.
+                NavHostFragment.findNavController(RegisterFragment.this)
+                        .navigate(R.id.diaryListFragment);
+            } catch (Exception ex) {
+                // ignore navigation failures
+            }
         });
 
         // Clickable "Giriş yap" in the bottom text
         binding.registerLink.setOnClickListener(v -> {
             try {
                 NavHostFragment.findNavController(RegisterFragment.this)
-                        .navigate(R.id.action_register_to_login);
+                        .navigate(R.id.diaryListFragment);
             } catch (Exception ex) {
                 // ignore
             }

@@ -11,23 +11,7 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_welcome" />
 
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="gulfer.emine.diary.LoginFragment"
-        android:label="@string/login_fragment_label"
-        tools:layout="@layout/fragment_login">
-
-        <action android:id="@+id/action_login_to_diaryList" app:destination="@id/diaryListFragment" />
-        <action android:id="@+id/action_login_to_register" app:destination="@id/registerFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="gulfer.emine.diary.RegisterFragment"
-        android:label="@string/register_fragment_label"
-        tools:layout="@layout/fragment_register">
-        <action android:id="@+id/action_register_to_login" app:destination="@id/loginFragment" />
-    </fragment>
+    <!-- Login/Register removed from navigation graph (kept as source files but not reachable) -->
 
     <fragment
         android:id="@+id/diaryListFragment"
@@ -52,11 +36,7 @@
         android:id="@+id/action_diaryList_to_entryDetail"
         app:destination="@id/entryDetailFragment" />
 
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="gulfer.emine.diary.ProfileFragment"
-        android:label="@string/profile_label"
-        tools:layout="@layout/fragment_profile" />
+    <!-- Profile removed from navigation graph (kept as source files but not reachable) -->
 
     <!-- placeholder for new journal fragment -->
     <fragment

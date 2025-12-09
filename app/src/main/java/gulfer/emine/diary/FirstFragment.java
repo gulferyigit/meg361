@@ -24,7 +24,7 @@ public class FirstFragment extends Fragment {
             btn.setOnClickListener(v -> {
                 try {
             NavHostFragment.findNavController(FirstFragment.this)
-                .navigate(R.id.loginFragment);
+                .navigate(R.id.diaryListFragment);
                 } catch (Exception ignored) {}
             });
         }

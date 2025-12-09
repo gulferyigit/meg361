@@ -4,4 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple_500">#6B21A8</color>
     <color name="danger">#BE185D</color>
+    <color name="primary_dark">#003153</color>
+    <color name="button_gray">#86858F</color>
+    <color name="card_bg">#003153</color>
+    <color name="button_area_bg">#FFFFFF</color>
 </resources>

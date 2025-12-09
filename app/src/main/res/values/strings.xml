@@ -46,11 +46,9 @@
     <string name="login_fragment_label">Login</string>
     <string name="register_fragment_label">Register</string>
     <string name="diary_list_label">Diary List</string>
-    <string name="profile_label">Profile</string>
     <string name="nav_diary">Günlükler</string>
     <string name="nav_add">Ekle</string>
-    <string name="nav_profile">Profil</string>
-    <string name="search_hint">Günlüklerde ara...</string>
+    <string name="search_hint">Günlüklerde ara…</string>
     <string name="card_title">Günlükler</string>
     <string name="add_button">＋</string>
     <!-- Login / Register -->
@@ -63,11 +61,6 @@
     <string name="hint_name">Ad Soyad</string>
     <string name="register_button">Kayıt Ol</string>
 
-    <!-- Profile -->
-    <string name="profile_screen_title">Profil Ekranı</string>
-    <string name="profile_title">Profil</string>
-    <string name="profile_handle">@emreyilmaz</string>
-    <string name="profile_count">234 günlük</string>
     <string name="save_button">Kaydet</string>
     <string name="settings_header">Ayarlar</string>
     <string name="notifications_label">Bildirimler</string>

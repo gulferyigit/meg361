@@ -1,23 +1,16 @@
 package gulfer.emine.diary;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
-import android.util.Log;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import gulfer.emine.diary.databinding.ActivityMainBinding;
-
 import android.view.Menu;
 import android.view.MenuItem;
+import android.util.Log;
+import androidx.fragment.app.FragmentContainerView;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import gulfer.emine.diary.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,26 +24,34 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        final String TAG = "MainActivityDebug";
-        Log.d(TAG, "onCreate - inflate complete, setting up NavController");
-        NavController navControllerLocal = null;
+        // Force window background to white to avoid black surfaces in some emulators
         try {
-            navControllerLocal = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        } catch (Exception ex) {
-            Log.e(TAG, "NavController alınamadı: " + ex.getMessage(), ex);
+            getWindow().getDecorView().setBackgroundColor(android.graphics.Color.WHITE);
+            getWindow().setStatusBarColor(android.graphics.Color.WHITE);
+            getWindow().setNavigationBarColor(android.graphics.Color.WHITE);
+        } catch (Exception ignored) {
         }
 
-        if (navControllerLocal != null) {
-            final NavController navControllerFinal = navControllerLocal; // effectively final for listeners
-            Log.d(TAG, "NavController currentDest (initial): " + String.valueOf(navControllerFinal.getCurrentDestination()));
-            navControllerFinal.addOnDestinationChangedListener((controller, destination, arguments) -> {
+        final String TAG = "MainActivityDebug";
+        Log.d(TAG, "onCreate - inflate complete, setting up NavController");
+        
+        // FragmentContainerView kullanıldığında NavHostFragment'i bu şekilde almalıyız
+        FragmentContainerView navHostFragmentView = findViewById(R.id.nav_host_fragment_content_main);
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment_content_main);
+        
+        if (navHostFragment != null) {
+            NavController navController = navHostFragment.getNavController();
+            Log.d(TAG, "NavController currentDest (initial): " + navController.getCurrentDestination());
+            
+            navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
                 Log.d(TAG, "Destination changed -> id:" + destination.getId() + " label:" + destination.getLabel());
                 try {
                     View bottom = findViewById(R.id.bottomNav);
                     if (bottom != null) {
                         int id = destination.getId();
-                        // Hide bottom nav for auth/new screens, show otherwise
-                        if (id == R.id.welcomeFragment || id == R.id.loginFragment || id == R.id.registerFragment || id == R.id.newJournalFragment) {
+                        // Hide bottom nav for new entry (or other screens that should be full-screen)
+                        if (id == R.id.newJournalFragment) {
                             bottom.setVisibility(View.GONE);
                         } else {
                             bottom.setVisibility(View.VISIBLE);
@@ -65,9 +66,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // Hook up bottom navigation buttons (found in included layout)
         View btnHome = findViewById(R.id.btnHome);
-        View btnCalendar = findViewById(R.id.btnCalendar);
         View btnNew = findViewById(R.id.btnNew);
-        View btnProfile = findViewById(R.id.btnProfile);
 
         if (btnHome != null) btnHome.setOnClickListener(v -> {
             try {
@@ -79,34 +78,11 @@ public class MainActivity extends AppCompatActivity {
                 android.widget.Toast.makeText(this, "Geçiş yapılamadı: " + ex.getMessage(), android.widget.Toast.LENGTH_SHORT).show();
             }
         });
-
-        if (btnCalendar != null) btnCalendar.setOnClickListener(v -> {
-            try {
-                NavController nc = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-                if (nc.getCurrentDestination() == null || nc.getCurrentDestination().getId() != R.id.diaryListFragment) {
-                    nc.navigate(R.id.diaryListFragment);
-                }
-            } catch (Exception ex) {
-                android.widget.Toast.makeText(this, "Geçiş yapılamadı: " + ex.getMessage(), android.widget.Toast.LENGTH_SHORT).show();
-            }
-        });
-
         if (btnNew != null) btnNew.setOnClickListener(v -> {
             try {
                 NavController nc = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
                 if (nc.getCurrentDestination() == null || nc.getCurrentDestination().getId() != R.id.newJournalFragment) {
                     nc.navigate(R.id.newJournalFragment);
-                }
-            } catch (Exception ex) {
-                android.widget.Toast.makeText(this, "Geçiş yapılamadı: " + ex.getMessage(), android.widget.Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        if (btnProfile != null) btnProfile.setOnClickListener(v -> {
-            try {
-                NavController nc = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-                if (nc.getCurrentDestination() == null || nc.getCurrentDestination().getId() != R.id.profileFragment) {
-                    nc.navigate(R.id.profileFragment);
                 }
             } catch (Exception ex) {
                 android.widget.Toast.makeText(this, "Geçiş yapılamadı: " + ex.getMessage(), android.widget.Toast.LENGTH_SHORT).show();

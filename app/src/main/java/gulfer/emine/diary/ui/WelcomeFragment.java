@@ -55,15 +55,9 @@ public class WelcomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        View btnLogin = view.findViewById(R.id.btnLoginWelcome);
-        if (btnLogin != null) btnLogin.setOnClickListener(v -> {
-            try { Navigation.findNavController(v).navigate(R.id.loginFragment); } catch (Exception ignored) {}
-        });
-
-        View btnRegister = view.findViewById(R.id.btnRegisterWelcome);
-        if (btnRegister != null) btnRegister.setOnClickListener(v -> {
-            try { Navigation.findNavController(v).navigate(R.id.registerFragment); } catch (Exception ignored) {}
+        View btnStartWriting = view.findViewById(R.id.btnStartWriting);
+        if (btnStartWriting != null) btnStartWriting.setOnClickListener(v -> {
+            try { Navigation.findNavController(v).navigate(R.id.diaryListFragment); } catch (Exception ignored) {}
         });
     }
 }

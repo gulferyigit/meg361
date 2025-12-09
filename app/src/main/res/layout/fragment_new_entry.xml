@@ -26,8 +26,8 @@
                 android:id="@+id/btnClose"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_arrow_back_black_24"
-                android:tint="#FFFFFF"
+                android:src="@android:drawable/ic_media_previous"
+                app:tint="#FFFFFF"
                 android:background="@android:color/transparent"
                 android:contentDescription="Geri" />
 
@@ -46,7 +46,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@android:drawable/ic_menu_my_calendar"
-                android:tint="#FFFFFF"
+                app:tint="#FFFFFF"
                 android:background="@android:color/transparent"
                 android:contentDescription="Takvim" />
         </LinearLayout>
@@ -161,7 +161,8 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@android:drawable/ic_menu_gallery"
-                android:background="#11121A" />
+                android:background="#11121A"
+                android:contentDescription="@null" />
 
             <ImageButton
                 android:id="@+id/btnRemovePhoto"
@@ -170,8 +171,9 @@
                 android:layout_gravity="end|top"
                 android:layout_margin="8dp"
                 android:src="@android:drawable/ic_menu_close_clear_cancel"
-                android:tint="#FFFFFF"
-                android:background="@android:color/transparent" />
+                app:tint="#FFFFFF"
+                android:background="@android:color/transparent"
+                android:contentDescription="Resmi kaldır" />
 
         </FrameLayout>
 

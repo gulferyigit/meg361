@@ -20,7 +20,6 @@ public class JournalViewModel extends AndroidViewModel {
 
     public LiveData<List<JournalEntity>> getAll() { return all; }
 
-    public LiveData<List<JournalEntity>> getAllByOwner(String owner) { return repo.getAllByOwner(owner); }
 
     public void insert(JournalEntity e, JournalRepository.InsertCallback cb) {
         repo.insert(e, cb);

@@ -23,6 +23,7 @@ import gulfer.emine.diary.JournalEntity;
 import gulfer.emine.diary.JournalViewModel;
 
 import java.util.List;
+import java.util.Locale;
 
 public class EntryDetailFragment extends Fragment {
     private JournalViewModel vm;
@@ -57,7 +58,7 @@ public class EntryDetailFragment extends Fragment {
                 // set dynamic title based on mood/emoji
                 TextView tTitle = view.findViewById(R.id.textTitle);
                 if (tTitle != null) {
-                    String mood = e.mood == null ? "" : e.mood.toLowerCase();
+                    String mood = e.mood == null ? "" : e.mood.toLowerCase(Locale.getDefault());
                     String title = "Güzel bir gün"; // default
                     if (mood.contains("😄") || mood.contains("😊") || mood.contains("🙂") || mood.contains(":)") || mood.contains("mutlu") ) {
                         title = "Harika bir gün";

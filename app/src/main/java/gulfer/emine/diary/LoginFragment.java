@@ -48,29 +48,9 @@ public class LoginFragment extends Fragment {
                 if (!ok) return;
 
                 try {
-                    // check if email is registered in Room users table asynchronously
-                    UserRepository ur = new UserRepository(requireContext());
-                    ur.findByEmail(email, user -> {
-                        requireActivity().runOnUiThread(() -> {
-                            if (user == null) {
-                                if (emailInput != null) emailInput.setError("Bu e-posta kayıtlı değil. Kayıt ol veya doğru e-postayı gir.");
-                                return;
-                            }
-                            // persist email (and guess name if not present) so ProfileFragment can show current user
-                            try {
-                                android.content.SharedPreferences prefs = requireContext().getSharedPreferences("app_prefs", android.content.Context.MODE_PRIVATE);
-                                prefs.edit().putString("pref_email", email).apply();
-                                // Always update displayed name on login (derive from email local-part)
-                                String guess = email != null && email.contains("@") ? email.substring(0, email.indexOf("@")) : email;
-                                if (guess == null || guess.isEmpty()) guess = "Kullanıcı";
-                                if (guess.length() > 0) guess = guess.substring(0,1).toUpperCase() + (guess.length() > 1 ? guess.substring(1) : "");
-                                prefs.edit().putString("pref_name", guess).apply();
-                            } catch (Exception ignored) {}
-
-                            NavHostFragment.findNavController(LoginFragment.this)
-                                    .navigate(R.id.action_login_to_diaryList);
-                        });
-                    });
+                    // No account check: proceed to diary list on successful local validation
+                    NavHostFragment.findNavController(LoginFragment.this)
+                            .navigate(R.id.diaryListFragment);
                 } catch (Exception ignored) {}
             });
         }
@@ -78,8 +58,8 @@ public class LoginFragment extends Fragment {
         if (registerLink != null) {
             registerLink.setOnClickListener(v -> {
                 try {
-                    NavHostFragment.findNavController(LoginFragment.this)
-                            .navigate(R.id.action_login_to_register);
+                        NavHostFragment.findNavController(LoginFragment.this)
+                                .navigate(R.id.diaryListFragment);
                 } catch (Exception ignored) {}
             });
         }

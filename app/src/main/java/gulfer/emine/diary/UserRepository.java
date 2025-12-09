@@ -2,38 +2,18 @@ package gulfer.emine.diary;
 
 import android.content.Context;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 public class UserRepository {
-    private final UserDao dao;
-    private final ExecutorService io;
-
-    public UserRepository(Context context) {
-        AppDatabase db = AppDatabase.getInstance(context);
-        dao = db.userDao();
-        io = Executors.newSingleThreadExecutor();
-    }
-
-    public void insert(UserEntity u, InsertCallback cb) {
-        io.execute(() -> {
-            long id = dao.insert(u);
-            if (cb != null) cb.onInserted(id);
-        });
-    }
-
-    public UserEntity findByEmailSync(String email) {
-        return dao.findByEmail(email);
-    }
+    // App no longer uses user accounts. This lightweight stub keeps existing call-sites compilable.
+    public UserRepository(Context context) { }
 
     public void findByEmail(String email, FindCallback cb) {
-        io.execute(() -> {
-            UserEntity u = dao.findByEmail(email);
-            if (cb != null) cb.onResult(u);
-        });
+        if (cb != null) cb.onResult(null);
     }
 
-    public interface FindCallback { void onResult(UserEntity u); }
+    public void insert(Object u, InsertCallback cb) {
+        if (cb != null) cb.onInserted(-1);
+    }
 
+    public interface FindCallback { void onResult(Object u); }
     public interface InsertCallback { void onInserted(long id); }
 }

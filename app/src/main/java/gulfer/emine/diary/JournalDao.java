@@ -19,9 +19,6 @@ public interface JournalDao {
     @Query("SELECT * FROM journals ORDER BY id DESC")
     LiveData<List<JournalEntity>> getAll();
 
-    @Query("SELECT * FROM journals WHERE ownerEmail = :owner ORDER BY id DESC")
-    LiveData<List<JournalEntity>> getAllByOwner(String owner);
-
     @Query("DELETE FROM journals WHERE id = :id")
     void deleteById(long id);
 }

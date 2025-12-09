@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Switch;
+import androidx.appcompat.widget.SwitchCompat;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,7 +32,7 @@ public class ProfileFragment extends Fragment {
     private View itemThemeCard;
 
     private static final String KEY_THEME = "pref_theme"; // "light" or "dark"
-    private Switch switchNotifications;
+    private SwitchCompat switchNotifications;
     private View itemHelp;
     private static final String KEY_NOTIF = "pref_notifications"; // boolean
 
